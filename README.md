@@ -58,6 +58,77 @@ http://127.0.0.1:1313/
 public/
 ```
 
+## 上線到 GitHub Pages
+
+這個專案使用 GitHub Actions 自動部署 Hugo 網站。
+
+部署設定檔在：
+
+```text
+.github/workflows/hugo.yaml
+```
+
+自訂網域設定檔在：
+
+```text
+static/CNAME
+```
+
+目前設定的正式網域是：
+
+```text
+contextlab.tw
+```
+
+第一次上線前，請確認 GitHub repository：
+
+```text
+Settings → Pages → Source → GitHub Actions
+```
+
+然後把本機檔案推到 GitHub：
+
+```powershell
+git status
+git add .
+git commit -m "Set up Hugo GitHub Pages deployment"
+git push
+```
+
+推上去後，到 GitHub：
+
+```text
+Actions
+```
+
+查看 `Deploy Hugo site to GitHub Pages` 是否成功。
+
+## 更新網站流程
+
+每次新增或修改文章後：
+
+```powershell
+cd "C:\Users\archw\Documents\Codex projects\Context Lab\contextlab-hugo-site"
+..\tools\hugo\hugo.exe server
+```
+
+在本機確認畫面正常後，停止預覽：
+
+```text
+Ctrl + C
+```
+
+接著提交並推送：
+
+```powershell
+git status
+git add .
+git commit -m "Update site content"
+git push
+```
+
+GitHub Actions 會自動重新建置並更新正式網站。
+
 ## 內容管理
 
 新增學習紀錄：

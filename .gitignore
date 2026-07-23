@@ -1,3 +1,13 @@
+# Hugo
 public/
-resources/_gen/
-.hugo_build.lock
+resources/
+
+# Log files
+*.log
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ site.Language.Locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+    {{ $style := resources.Get "css/main.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="{{ site.Home.RelPermalink }}">ContextLab</a>
+        <div class="nav-links">
+          <a href="/projects/">專案</a>
+          <a href="/knowledge/">知識庫</a>
+          <a href="/learning-log/">學習</a>
+          <a href="/workflows/">工作流</a>
+          <a href="/construction/">建築</a>
+          <a href="/photography/">影像</a>
+          <a href="/about/">關於</a>
+        </div>
+      </nav>
+    </header>
+    <main class="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+    <footer class="site-footer">
+      <div class="inner">ContextLab - Building Enterprise Knowledge for the AI Era.</div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+baseURL = "https://contextlab.tw/"
+locale = "zh-tw"
+title = "ContextLab"
+
+[params]
+  description = "Wilson 的 AI 與企業知識實驗室"
+  tagline = "Building Enterprise Knowledge for the AI Era."
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[permalinks]
+  learning-log = "/learning-log/:year/:month/:slug/"
+  projects = "/projects/:slug/"
+  knowledge = "/knowledge/:slug/"
+  workflows = "/workflows/:slug/"
+  construction = "/construction/:slug/"
+  photography = "/photography/:slug/"

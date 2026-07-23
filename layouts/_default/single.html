@@ -1,0 +1,11 @@
+{{ define "main" }}
+  <article class="content">
+    <h1>{{ .Title }}</h1>
+    <div class="meta">
+      {{ .Date.Format "2006-01-02" }}
+      {{ with .Params.updated }} · Updated {{ . }}{{ end }}
+      {{ with .Params.status }} · {{ . }}{{ end }}
+    </div>
+    {{ .Content }}
+  </article>
+{{ end }}

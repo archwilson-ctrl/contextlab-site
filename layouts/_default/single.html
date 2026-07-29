@@ -1,10 +1,11 @@
 {{ define "main" }}
-  <article class="content">
+  <article class="content animate-in">
+    <p class="section-label">Article</p>
     <h1>{{ .Title }}</h1>
-    <div class="meta">
+    <div class="meta" style="margin-bottom: var(--s-5);">
       {{ .Date.Format "2006-01-02" }}
       {{ with .Params.updated }} · Updated {{ . }}{{ end }}
-      {{ with .Params.status }} · {{ . }}{{ end }}
+      {{ with .Params.status }} · <span class="status-badge">{{ . }}</span>{{ end }}
     </div>
     {{ .Content }}
   </article>

@@ -180,15 +180,21 @@ docs/ContextLab_PRD.md
 ## 網站分工
 
 ```text
-contextlab.tw
+contextlab.tw / www.contextlab.tw
 → GitHub Pages + Hugo
 → 主站、學習紀錄、知識庫、作品集
+
+kfcphoto.contextlab.tw
+→ Cloudflare Tunnel + NAS
+→ 開富力工程相片上傳 PWA（已上線）
 
 lab.contextlab.tw
 → Vercel
 → 互動工具、AI Demo、前端實驗
 
-api.contextlab.tw / photo.contextlab.tw
+api.contextlab.tw
 → 未來 Cloudflare Tunnel + NAS
-→ API Server、PWA、工程照片系統
+→ 共用 API Server
 ```
+
+各建案工程照片 PWA 採專案專用子網域命名，例如 `{專案代號}photo.contextlab.tw`。

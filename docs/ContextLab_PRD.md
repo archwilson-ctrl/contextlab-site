@@ -222,7 +222,8 @@ Wilson 的 AI 與企業知識實驗室
 
 初期可包含：
 
-- Photo System：工程照片管理系統
+- KFC Photo PWA：開富力工程相片上傳（`kfcphoto.contextlab.tw`，已上線）
+- Photo System：工程照片管理系統（各建案以 `{專案代號}photo.contextlab.tw` 命名）
 - NAS API：DS923+ API Server 實驗
 - Cloudflare Tunnel：安全對外連線
 - Notion Knowledge Base：Notion 知識庫架構
@@ -425,15 +426,18 @@ contextlab.tw        -> GitHub Pages
 www.contextlab.tw    -> GitHub Pages
 ```
 
-未來：
+已上線與規劃中：
 
 ```text
-photo.contextlab.tw  -> Cloudflare Tunnel -> DS923+ Photo API / PWA
-api.contextlab.tw    -> Cloudflare Tunnel -> DS923+ API Server
-docs.contextlab.tw   -> GitHub Pages 或未來文件系統
-ai.contextlab.tw     -> Cloudflare Tunnel -> AI Agent
-status.contextlab.tw -> 狀態頁或監控服務
+kfcphoto.contextlab.tw -> Cloudflare Tunnel -> 開富力工程相片上傳 PWA（已上線）
+api.contextlab.tw      -> Cloudflare Tunnel -> DS923+ API Server
+lab.contextlab.tw      -> Vercel -> 互動工具、AI Demo
+docs.contextlab.tw     -> GitHub Pages 或未來文件系統
+ai.contextlab.tw       -> Cloudflare Tunnel -> AI Agent
+status.contextlab.tw   -> 狀態頁或監控服務
 ```
+
+各建案工程照片 PWA 採專案專用子網域，例如 `{專案代號}photo.contextlab.tw`。
 
 ### 8.3 Cloudflare Tunnel 規劃
 
@@ -545,9 +549,9 @@ projects.json
 
 只公開必要服務：
 
-- photo.contextlab.tw
+- kfcphoto.contextlab.tw（及各建案 `{專案代號}photo.contextlab.tw`）
 - api.contextlab.tw
-- pwa.contextlab.tw
+- lab.contextlab.tw
 
 ---
 

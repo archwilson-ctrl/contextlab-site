@@ -1,53 +1,83 @@
 {{ define "main" }}
-  <section class="hero">
-    <div class="eyebrow">AI · Architecture · Knowledge · Photography</div>
-    <h1>ContextLab</h1>
-    <p class="lead">Building Enterprise Knowledge for the AI Era. 這裡記錄 AI、建築、BIM、NAS、Notion、系統整合與企業知識管理的學習與實驗。</p>
+  <section class="hero animate-in">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+      AI · Architecture · Knowledge · Photography
+    </div>
+    <h1 class="hero-title">
+      Build <span class="hero-title-accent">Context</span>.<br>
+      Empower AI.
+    </h1>
+    <p class="hero-lead">Wilson 的 AI 與企業知識實驗室。記錄 AI、建築、BIM、系統整合與企業知識管理的學習與實驗。</p>
+    <div class="hero-actions animate-in animate-in-delay-1">
+      <a class="btn btn-primary" href="/learning-log/">閱讀學習日誌</a>
+      <a class="btn btn-ghost" href="/about/">關於 ContextLab</a>
+    </div>
   </section>
 
-  <section>
-    <h2>網站架構</h2>
+  <section class="section animate-in animate-in-delay-2">
+    <div class="section-header">
+      <div>
+        <p class="section-label">Explore</p>
+        <h2 class="section-title">網站架構</h2>
+      </div>
+    </div>
     <div class="grid">
-      <a class="card card-blue" href="/projects/">
+      <a class="card animate-in animate-in-delay-3" href="/projects/">
         <span class="card-kicker">Build</span>
         <h3>專案實作</h3>
         <p>正在開發與驗證的系統、工具與網站。</p>
+        <span class="card-arrow" aria-hidden="true">→</span>
       </a>
-      <a class="card card-green" href="/knowledge/">
+      <a class="card animate-in animate-in-delay-4" href="/knowledge/">
         <span class="card-kicker">Archive</span>
         <h3>知識庫</h3>
         <p>AI、建築、流程、BIM 與系統設計的長期知識庫。</p>
+        <span class="card-arrow" aria-hidden="true">→</span>
       </a>
-      <a class="card card-amber" href="/learning-log/">
+      <a class="card animate-in animate-in-delay-5" href="/learning-log/">
         <span class="card-kicker">Journal</span>
         <h3>學習日誌</h3>
         <p>每天或每週的學習紀錄與實作心得。</p>
+        <span class="card-arrow" aria-hidden="true">→</span>
       </a>
-      <a class="card card-violet" href="/workflows/">
+      <a class="card animate-in animate-in-delay-3" href="/workflows/">
         <span class="card-kicker">Method</span>
         <h3>AI 工作流</h3>
         <p>可重複使用的 AI 工作流程與自動化方法。</p>
+        <span class="card-arrow" aria-hidden="true">→</span>
       </a>
-      <a class="card card-slate" href="/construction/">
+      <a class="card animate-in animate-in-delay-4" href="/construction/">
         <span class="card-kicker">Practice</span>
         <h3>建築與 BIM</h3>
         <p>建築、BIM、Revit、工程管理與工地流程筆記。</p>
+        <span class="card-arrow" aria-hidden="true">→</span>
       </a>
-      <a class="card card-rose" href="/photography/">
+      <a class="card animate-in animate-in-delay-5" href="/photography/">
         <span class="card-kicker">Visual</span>
         <h3>影像筆記</h3>
         <p>攝影作品、城市觀察、空間、光影與材料紀錄。</p>
+        <span class="card-arrow" aria-hidden="true">→</span>
       </a>
     </div>
   </section>
 
-  <section>
-    <h2>最新筆記</h2>
+  <section class="section animate-in animate-in-delay-4">
+    <div class="section-header">
+      <div>
+        <p class="section-label">Latest</p>
+        <h2 class="section-title">最新筆記</h2>
+      </div>
+      <a class="section-link" href="/learning-log/">查看全部 →</a>
+    </div>
     <div class="list">
       {{ range first 5 (where site.RegularPages "Section" "in" (slice "learning-log" "knowledge" "projects" "workflows" "construction" "photography")) }}
         <article class="list-item">
           <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-          <div class="meta">{{ .Date.Format "2006-01-02" }}{{ with .Params.status }} · {{ . }}{{ end }}</div>
+          <div class="meta">
+            {{ .Date.Format "2006-01-02" }}
+            {{ with .Params.status }} · <span class="status-badge">{{ . }}</span>{{ end }}
+          </div>
           <p class="muted">{{ .Summary }}</p>
         </article>
       {{ end }}

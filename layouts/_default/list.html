@@ -1,16 +1,24 @@
 {{ define "main" }}
-  <section class="content">
+  <section class="content animate-in">
+    <p class="section-label">Section</p>
     <h1>{{ .Title }}</h1>
-    {{ with .Content }}{{ . }}{{ end }}
+    {{ with .Content }}
+      <div class="muted" style="margin-bottom: var(--s-5);">{{ . }}</div>
+    {{ end }}
   </section>
 
-  <section class="list">
-    {{ range .Pages }}
-      <article class="list-item">
-        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        <div class="meta">{{ .Date.Format "2006-01-02" }}{{ with .Params.status }} · {{ . }}{{ end }}</div>
-        <p class="muted">{{ .Summary }}</p>
-      </article>
-    {{ end }}
+  <section class="section animate-in animate-in-delay-1">
+    <div class="list">
+      {{ range .Pages }}
+        <article class="list-item">
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <div class="meta">
+            {{ .Date.Format "2006-01-02" }}
+            {{ with .Params.status }} · <span class="status-badge">{{ . }}</span>{{ end }}
+          </div>
+          <p class="muted">{{ .Summary }}</p>
+        </article>
+      {{ end }}
+    </div>
   </section>
 {{ end }}

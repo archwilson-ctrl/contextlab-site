@@ -1,7 +1,7 @@
 ---
 title: "ContextLab 主站"
 date: 2026-07-22
-updated: 2026-07-22
+updated: 2026-07-30
 tags: ["Hugo", "GitHub Pages", "Cloudflare"]
 categories: ["Projects"]
 status: "growing"
@@ -17,11 +17,10 @@ Vercel 會保留給未來互動工具、AI Demo 與前端實驗，例如：
 - 工程照片 Demo
 - Dashboard Prototype
 
-未來網域分工：
+網域分工：
 
 ```text
-contextlab.tw       -> Hugo 主站
-lab.contextlab.tw   -> Vercel 互動工具
-api.contextlab.tw   -> NAS API
-photo.contextlab.tw -> 工程照片系統
+contextlab.tw     -> Hugo 主站
+lab.contextlab.tw -> Vercel 互動工具
+api.contextlab.tw -> NAS 共用 API（規劃中）
 ```

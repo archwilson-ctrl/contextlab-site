@@ -55,10 +55,19 @@ a:hover {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
   font-weight: 750;
   letter-spacing: 0;
   text-decoration: none;
   color: #17324d;
+}
+
+.brand-logo {
+  display: block;
+  width: min(224px, 48vw);
+  height: auto;
 }
 
 .nav-links {
@@ -251,6 +260,11 @@ h3 {
   .nav {
     align-items: flex-start;
     flex-direction: column;
+    gap: 16px;
+  }
+
+  .brand-logo {
+    width: min(210px, 72vw);
   }
 
   .main {

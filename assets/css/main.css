@@ -999,23 +999,49 @@ body.nav-open {
     gap: var(--s-2);
   }
 
+  .brand {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: calc(100% - 80px);
+  }
+
   .brand-logo {
     width: auto;
-    height: 44px;
+    height: 30px;
+    max-width: min(128px, 46vw);
+  }
+
+  .brand-logo-light {
+    display: block;
+  }
+
+  .brand-logo-dark {
+    display: none;
+  }
+
+  [data-theme="dark"] .brand-logo-light {
+    display: none;
+  }
+
+  [data-theme="dark"] .brand-logo-dark {
+    display: block;
+  }
+
+  .nav-toolbar {
+    margin-left: auto;
+    flex-shrink: 0;
+    gap: var(--s-1);
   }
 
   .nav-links--desktop {
     display: none;
   }
 
-  .nav-toolbar {
-    margin-left: auto;
-    gap: var(--s-1);
-  }
-
   .nav-toggle {
     display: inline-flex;
     flex-direction: column;
+    width: 32px;
+    height: 32px;
   }
 
   .theme-toggle {

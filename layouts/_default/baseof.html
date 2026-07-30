@@ -53,25 +53,25 @@
           </button>
         </div>
       </nav>
-      <div id="nav-drawer" class="nav-drawer" data-nav-drawer aria-hidden="true">
-        <div class="nav-drawer-overlay" data-nav-overlay data-nav-close aria-hidden="true"></div>
-        <aside class="nav-drawer-panel" role="dialog" aria-modal="true" aria-label="網站選單">
-          <div class="nav-drawer-head">
-            <span class="nav-drawer-title">Menu</span>
-            <button class="nav-drawer-close" type="button" data-nav-close aria-label="關閉選單">×</button>
-          </div>
-          <nav class="nav-drawer-links" aria-label="Mobile navigation">
-            <a href="/projects/">專案</a>
-            <a href="/knowledge/">知識庫</a>
-            <a href="/learning-log/">學習</a>
-            <a href="/workflows/">方法論</a>
-            <a href="/construction/">建築</a>
-            <a href="/photography/">影像</a>
-            <a href="/about/">關於</a>
-          </nav>
-        </aside>
-      </div>
     </header>
+    <div id="nav-drawer" class="nav-drawer" data-nav-drawer aria-hidden="true">
+      <div class="nav-drawer-overlay" data-nav-overlay data-nav-close aria-hidden="true"></div>
+      <aside class="nav-drawer-panel" role="dialog" aria-modal="true" aria-label="網站選單">
+        <div class="nav-drawer-head">
+          <span class="nav-drawer-title">Menu</span>
+          <button class="nav-drawer-close" type="button" data-nav-close aria-label="關閉選單">×</button>
+        </div>
+        <nav class="nav-drawer-links" aria-label="Mobile navigation">
+          <a href="/projects/">專案</a>
+          <a href="/knowledge/">知識庫</a>
+          <a href="/learning-log/">學習</a>
+          <a href="/workflows/">方法論</a>
+          <a href="/construction/">建築</a>
+          <a href="/photography/">影像</a>
+          <a href="/about/">關於</a>
+        </nav>
+      </aside>
+    </div>
     <main class="main">
       {{ block "main" . }}{{ end }}
     </main>

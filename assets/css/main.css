@@ -249,18 +249,20 @@ a {
 .nav-drawer {
   position: fixed;
   inset: 0;
-  z-index: 200;
+  z-index: 1000;
   pointer-events: none;
+  visibility: hidden;
 }
 
 .nav-drawer.is-open {
   pointer-events: auto;
+  visibility: visible;
 }
 
 .nav-drawer-overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(30, 36, 51, 0.36);
+  background: rgba(30, 36, 51, 0.42);
   opacity: 0;
   transition: opacity var(--duration) var(--ease);
 }
@@ -270,17 +272,22 @@ a {
 }
 
 .nav-drawer-panel {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: min(320px, 88vw);
-  height: 100%;
+  height: 100dvh;
+  max-height: 100vh;
   padding: var(--s-3);
   border-left: 1px solid var(--border);
-  background: var(--surface);
+  background-color: var(--surface);
   box-shadow: var(--shadow-md);
   transform: translateX(100%);
   transition: transform var(--duration) var(--ease);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1001;
 }
 
 .nav-drawer.is-open .nav-drawer-panel {
@@ -292,6 +299,8 @@ a {
   align-items: center;
   justify-content: space-between;
   margin-bottom: var(--s-3);
+  padding-bottom: var(--s-2);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-drawer-title {
@@ -321,15 +330,24 @@ a {
   display: flex;
   flex-direction: column;
   gap: var(--s-1);
+  margin: 0;
+  padding: var(--s-2) 0 0;
 }
 
 .nav-drawer-links a {
+  display: block;
+  position: static;
   padding: var(--s-2) var(--s-1);
   border-radius: var(--radius-sm);
   color: var(--ink);
   font-size: 16px;
   font-weight: 500;
+  line-height: 1.4;
   transition: background var(--duration) var(--ease);
+}
+
+.nav-drawer-links a::after {
+  content: none;
 }
 
 .nav-drawer-links a:hover {
@@ -338,6 +356,11 @@ a {
 
 body.nav-open {
   overflow: hidden;
+}
+
+body.nav-open .main,
+body.nav-open .site-footer {
+  pointer-events: none;
 }
 
 .hero-mobile-only {
@@ -979,6 +1002,8 @@ body.nav-open {
     left: 0;
     right: 0;
     height: var(--header-height);
+    overflow: visible;
+    z-index: 900;
     border-bottom-color: transparent;
     transition:
       border-color var(--duration) var(--ease),
